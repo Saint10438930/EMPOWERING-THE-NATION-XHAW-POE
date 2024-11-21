@@ -70,3 +70,6 @@ Solution: The courses were grouped into categories, and a separate page for each
 
 Challenge: Ensuring accessibility for all users, including those with disabilities.
 Solution: Implemented semantic HTML elements and added alt text for images. Used proper color contrast for readability.
+
+# YOUTUBE LINK
+https://youtube.com/shorts/Za53lyYIFOc?si=xq8osMcCCmUQ5XDM
