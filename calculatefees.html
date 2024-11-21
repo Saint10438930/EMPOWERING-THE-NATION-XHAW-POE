@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate Fees - Empowering the Nation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Calculate Course Fees</h1>
+        <img src="_images/logo.png" alt="Empowering the Nation Logo" class="logo">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="sixmonthscourses.html">Six-Month Courses</a>
+            <a href="sixweekcourses.html">Six-Week Courses</a>
+            <a href="calculatefees.html">Calculate Fees</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Fee Calculation</h2>
+        <form id="feeForm">
+            <h3>Select Courses:</h3>
+            <label>
+                <input type="checkbox" name="courses" value="1500"> First Aid (R1500)
+            </label><br>
+            <label>
+                <input type="checkbox" name="courses" value="1500"> Sewing (R1500)
+            </label><br>
+            <label>
+                <input type="checkbox" name="courses" value="1500"> Landscaping (R1500)
+            </label><br>
+            <label>
+                <input type="checkbox" name="courses" value="1500"> Life Skills (R1500)
+            </label><br>
+            <label>
+                <input type="checkbox" name="courses" value="750"> Child Minding (R750)
+            </label><br>
+            <label>
+                <input type="checkbox" name="courses" value="750"> Cooking (R750)
+            </label><br>
+            <label>
+                <input type="checkbox" name="courses" value="750"> Garden Maintenance (R750)
+            </label><br>
+            <h3>Contact Details:</h3>
+            <input type="text" placeholder="Your Name" required><br>
+            <input type="text" placeholder="Phone Number" required><br>
+            <input type="email" placeholder="Email" required><br>
+            <button type="button" onclick="calculateFees()">Calculate Total Fees</button>
+        </form>
+        <p id="totalFee"></p>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Empowering the Nation. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function calculateFees() {
+    const form = document.getElementById('feeForm');
+    const checkboxes = form.querySelectorAll('input[name="courses"]:checked');
+    let total = 0;
+    let courseCount = 0;
+    const selectedCourses = [];
+    
+    checkboxes.forEach((checkbox) => {
+        total += parseInt(checkbox.value);
+        courseCount++;
+        selectedCourses.push(checkbox.parentElement.textContent.trim());
+    });
+    
+    let discount = 0;
+    if (courseCount === 2) discount = 0.05;
+    else if (courseCount === 3) discount = 0.10;
+    else if (courseCount > 3) discount = 0.15;
+    
+    total -= total * discount;
+    
+    // Add VAT (15%)
+    total *= 1.15;
+    
+    // Displaying the total fees and selected courses
+    document.getElementById('totalFee').innerHTML = `
+        <strong>Invoice Summary:</strong><br>
+        Selected Courses: ${selectedCourses.join(', ')}<br>
+        Total Fees (including VAT): R${total.toFixed(2)}
+    `;
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply - Empowering the Nation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Empowering the Nation</h1>
+        <img src="_images/logo.png" alt="Empowering the Nation Logo" class="logo">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="sixmonthscourses.html">Six-Month Courses</a>
+            <a href="sixweekcourses.html">Six-Week Courses</a>
+            <a href="calculatesfees.html">Calculate Fees</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main class="text-box">
+        <h2>Apply for a Course</h2>
+        <form action="submit_application.php" method="POST">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="course">Select Course:</label>
+            <select id="course" name="course" required>
+                <option value="first-aid">First Aid</option>
+                <option value="Sewing">Sewing</option>
+                <option value="Landscaping">Landscaping</option>
+                <option value="Life-Skills">Life Skills</option>
+                <option value="Child-Minding">Child Minding</option>
+                <option value="Cooking">Cooking</option>
+                <option value="gardening-maintenance">Gardening Maintenance</option>
+                
+            </select>
+
+            <button type="submit" class="apply-button">Submit Application</button>
+        </form>
+
+        <a href="index.html">Back to Home</a>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Empowering the Nation. All rights reserved.</p>
+    </footer>
+</body>
+</html>
